@@ -1,0 +1,21 @@
+package com.test.microservice.mainweb;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.test.microservice.mainweb.service.DepositServiceProxy;
+
+@RestController
+public class MainWebRest {
+	
+	@Autowired
+	private DepositServiceProxy depositServiceProxy;
+	
+	@GetMapping("/doDeposit/{bathToDeposit}")
+	public DepositResult doDeposit(@PathVariable("bathToDeposit") String bathToDeposit){
+		DepositResult depositResult = depositServiceProxy.doDeposit(bathToDeposit);
+        return depositResult;
+	}
+}

@@ -1,0 +1,8 @@
+package com.test.microservice.withdraw.vo;
+
+public class WithdrawResult {
+	private String status;
+	private int port;
+	
+	
+}

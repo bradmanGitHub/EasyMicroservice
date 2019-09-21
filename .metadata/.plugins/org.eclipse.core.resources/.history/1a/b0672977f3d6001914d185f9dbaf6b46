@@ -1,0 +1,5 @@
+package com.test.microservice.withdraw.vo;
+
+public class WithdrawResult {
+
+}

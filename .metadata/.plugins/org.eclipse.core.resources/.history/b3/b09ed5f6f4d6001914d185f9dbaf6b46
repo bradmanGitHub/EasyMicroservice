@@ -1,0 +1,11 @@
+spring.application.name=mainweb-service
+
+server.port:4444
+#server.servlet.contextPath=/mainWebService
+eureka.client.serviceUrl.defaultZone:http://localhost:1111/eureka
+eureka.instance.leaseRenewalIntervalInSeconds:5
+    
+management.endpoints.web.exposure.include='*'
+
+#Ribbon
+deposit-service.ribbon.listOfServers=http://localhost:2222

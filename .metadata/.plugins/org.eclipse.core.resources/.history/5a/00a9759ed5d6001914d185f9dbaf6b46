@@ -1,0 +1,9 @@
+package com.test.microservice.withdraw.rest;
+
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class WithdrawRest {
+	public String doWithDraw(PathVariable(long bathToWithdraw) long bathToWithdraw)
+}

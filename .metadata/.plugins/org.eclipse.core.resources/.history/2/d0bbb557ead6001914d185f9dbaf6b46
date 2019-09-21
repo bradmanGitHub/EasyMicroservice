@@ -1,0 +1,8 @@
+package com.test.microservice.mainweb.service;
+
+import org.springframework.cloud.openfeign.FeignClient;
+
+@FeignClient(name="deposit-service", url="")
+public interface DepositServiceProxy {
+
+}

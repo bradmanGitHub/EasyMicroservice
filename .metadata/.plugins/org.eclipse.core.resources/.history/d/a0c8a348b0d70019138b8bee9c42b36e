@@ -1,0 +1,13 @@
+DROP TABLE IF EXISTS billionaires;
+
+CREATE TABLE MONEY_BOOKING(
+  id INT AUTO_INCREMENT  PRIMARY KEY,
+  first_name VARCHAR(250) NOT NULL,
+  last_name VARCHAR(250) NOT NULL,
+  TotalMoney NUMBER DEFAULT 0
+);
+
+INSERT INTO MONEY_BOOKING (first_name, last_name, career) VALUES
+('Aliko', 'Dangote', 100),
+('Bill', 'Gates', 200),
+('Folrunsho', 'HANAGA' 500);

@@ -1,0 +1,22 @@
+DROP TABLE IF EXISTS MONEY_BOOKING;
+
+CREATE TABLE MONEY_ACCOUNT(
+  id INT AUTO_INCREMENT  PRIMARY KEY,
+  first_name VARCHAR(250) NOT NULL,
+  last_name VARCHAR(250) NOT NULL,
+  total_money BIGINT DEFAULT 0
+);
+
+INSERT INTO MONEY_ACCOUNT (first_name, last_name, total_money) VALUES
+('Michael', 'Jordan', 100),
+('Aris', 'Saman', 100),
+('Alan', 'Smith', 100);
+
+
+CREATE TABLE MONEY_TRANSACTION(
+  id INT AUTO_INCREMENT  PRIMARY KEY,
+  transaction_type VARCHAR(250) NOT NULL,
+  from_account VARCHAR(250) NULL DEFAULT '',
+  to_account VARCHAR(250) NULL DEFAULT '',
+  bath BIGINT DEFAULT 0
+);

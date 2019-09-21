@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1568445895577_0" label="Microservice" name="Microservice">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/deposit" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/withdraw" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/eureka" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/h2dbapp" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/mainweb" type="4"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1568453206874_1" label="Window Working Set" name="Aggregate for window 1568453206874"/>
+</workingSetManager>

@@ -1,0 +1,14 @@
+package com.test.microservice.mainweb.rest;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class MainWebRest {
+	
+//	@GetMapping("/doDeposit/{bathToDeposit}")
+//	public String doDeposit(@PathVariable("bathToDeposit") String bathToDeposit, Model model){
+//		String result = depositServiceBridge.doDeposit(bathToDeposit);
+//		model.addAttribute("json", result);
+//        return result;
+//	}
+}

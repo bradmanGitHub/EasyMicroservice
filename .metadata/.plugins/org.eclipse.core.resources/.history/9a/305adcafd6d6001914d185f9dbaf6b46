@@ -1,0 +1,8 @@
+spring.application.name=mainWeb-service
+
+error.path=/error
+server.port:4444
+eureka.client.serviceUrl.defaultZone:http://localhost:1111/eureka
+eureka.instance.leaseRenewalIntervalInSeconds:5
+    
+management.endpoints.web.exposure.include='*'

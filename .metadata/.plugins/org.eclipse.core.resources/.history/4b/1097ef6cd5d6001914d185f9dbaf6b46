@@ -1,0 +1,10 @@
+# Spring properties
+spring.application.name=withdraw-service
+
+
+# HTTP Server
+server.port: 2222
+server.servlet.contextPath=/depositService
+eureka.client.serviceUrl.defaultZone=http://localhost:1111/eureka/
+eureka.client.instance.leaseRenewalIntervalInSeconds=5
+management.endpoints.web.exposure.include='*'

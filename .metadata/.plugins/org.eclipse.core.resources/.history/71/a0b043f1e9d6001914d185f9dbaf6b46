@@ -1,0 +1,18 @@
+package com.test.microservice.mainweb;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+
+@SpringBootApplication
+@EnableDiscoveryClient
+public class MainwebApplication {
+
+	// public static final String SUBTRACTION_SERVICE_URL =
+	// "http://subtraction-service";
+	public static void main(String[] args) {
+		// System.setProperty("spring.config.name", "mainWeb-server");
+		SpringApplication.run(MainwebApplication.class, args);
+	}
+
+}

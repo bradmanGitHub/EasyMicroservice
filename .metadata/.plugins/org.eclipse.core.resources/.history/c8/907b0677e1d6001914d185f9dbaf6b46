@@ -1,0 +1,60 @@
+package com.test.microservice.mainweb;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.cloud.netflix.ribbon.RibbonClient;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.web.client.RestTemplate;
+
+import com.test.microservice.mainweb.rest.MainWebRest;
+import com.test.microservice.mainweb.ribbon.RibbonConfiguration;
+import com.test.microservice.mainweb.service.DepositServiceBridge;
+
+@SpringBootApplication
+@EnableDiscoveryClient
+@ComponentScan(useDefaultFilters = false)
+@RibbonClient(name = "say-hello", configuration = RibbonConfiguration.class)
+public class MainwebApplication {
+	
+	public static final String DEPOSIT_SERVICE_URL = "http://deposit-service";
+//    public static final String SUBTRACTION_SERVICE_URL = "http://subtraction-service";
+    public static void main(String[] args) {
+        //System.setProperty("spring.config.name", "mainWeb-server");
+        SpringApplication.run(MainwebApplication.class, args);
+    }
+    
+    
+    @LoadBalanced
+    @Bean
+    RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
+    
+    @Bean
+    public DepositServiceBridge depositeService() {
+        return new DepositServiceBridge(DEPOSIT_SERVICE_URL);
+    }
+    
+    
+    @Bean
+    public MainWebRest MainWebRestService() {
+        return new MainWebRest(depositeService());
+    }
+    
+//    @Bean
+//    public WebArithmeticController additionController() {
+//        return new WebArithmeticController(additionService(), subtractionService());
+//    }
+//    @Bean
+//    public WebSubtractionService subtractionService() {
+//        return new WebSubtractionService(SUBTRACTION_SERVICE_URL);
+//    }
+//    @Bean
+//    public HomeController homeController() {
+//        return new HomeController();
+//    }
+
+}

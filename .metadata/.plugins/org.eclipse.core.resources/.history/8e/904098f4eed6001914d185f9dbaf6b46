@@ -1,0 +1,5 @@
+package com.test.microservice.Deposit;
+
+public class DepositResult {
+
+}

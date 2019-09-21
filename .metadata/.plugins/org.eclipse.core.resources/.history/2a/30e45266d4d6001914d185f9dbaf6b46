@@ -1,0 +1,13 @@
+package com.test.microservice.Deposit.rest;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class DepositRest {
+	
+	@GetMapping()
+	public String doDeposit(int bathToDeposit){
+		return "Deposit Done"
+	}
+}

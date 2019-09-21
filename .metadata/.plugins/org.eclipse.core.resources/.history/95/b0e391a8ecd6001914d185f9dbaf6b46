@@ -1,0 +1,13 @@
+package com.test.microservice.mainweb.service;
+
+import org.springframework.cloud.netflix.ribbon.RibbonClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+//@FeignClient(name="deposit-service", url="localhost:2222")
+@FeignClient(name="deposit-service")
+@RibbonClient(name="deposit-service")
+public interface DepositServiceProxy {
+	@GetMapping("/doDeposit/{bathToDeposit}")
+	public String doDeposit(@PathVariable("bathToDeposit") String bathToDeposit);
+}

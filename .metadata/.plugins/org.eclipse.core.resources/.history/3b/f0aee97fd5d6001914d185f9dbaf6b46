@@ -1,0 +1,5 @@
+package com.test.microservice.withdraw.rest;
+
+public class WithdrawRest {
+
+}

@@ -1,0 +1,7 @@
+package com.test.microservice.deposit.daos;
+import org.springframework.data.repository.CrudRepository;
+
+import com.test.microservice.Deposit.model.User;
+
+public interface UserRepository extends CrudRepository<User, Integer> {
+}

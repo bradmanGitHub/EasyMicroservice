@@ -1,0 +1,13 @@
+package com.test.microservice.h2dbapp;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class H2dbappApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(H2dbappApplication.class, args);
+	}
+
+}

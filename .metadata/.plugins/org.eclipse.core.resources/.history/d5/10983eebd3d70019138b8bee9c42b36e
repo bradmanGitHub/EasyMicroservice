@@ -1,0 +1,37 @@
+package com.test.microservice.Deposit.rest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.test.microservice.Deposit.vo.DepositResult;
+
+@RestController
+public class DepositRest {
+	
+	@Autowired
+	private Environment environment;
+	
+	@Autowired
+	private JdbcTemplate jdbcTemplate;
+	
+	
+	@GetMapping("/doDeposit/{accounName}/{bathToDeposit}")
+	public DepositResult doDeposit(@PathVariable("bathToDeposit") String bathToDeposit,
+			@PathVariable("accounName") String accounName){
+		
+		DepositResult depositResult = new DepositResult();
+		depositResult.setStatus("Deposit Success:"+bathToDeposit);
+		depositResult.setPort(Integer.parseInt(environment.getProperty("local.server.port")));
+		
+		System.out.println("****** test deposit MONEY_BOOKING table ******");
+		String sqlStatements = "update MONEY_ACCOUNT SET TOTAL_MONEY = TOTAL_MONEY+"+bathToDeposit+" WHERE FIRST_NAME = '"+accounName+"'";
+
+		jdbcTemplate.execute(sqlStatements);
+		
+		return depositResult;
+	}
+}

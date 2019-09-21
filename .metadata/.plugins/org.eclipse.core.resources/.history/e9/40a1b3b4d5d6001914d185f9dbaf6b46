@@ -1,0 +1,10 @@
+package com.test.microservice.withdraw.rest;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class WithdrawRest {
+	public String doWithDraw(PathVariable("bathToWithdraw") long bathToWithdraw){
+		return "Do withdraw: "+bathToWithdraw;
+	}
+}

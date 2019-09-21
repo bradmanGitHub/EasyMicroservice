@@ -1,0 +1,6 @@
+package com.test.microservice.Deposit;
+
+public class DepositResult {
+	private String status;
+	private int port;
+}

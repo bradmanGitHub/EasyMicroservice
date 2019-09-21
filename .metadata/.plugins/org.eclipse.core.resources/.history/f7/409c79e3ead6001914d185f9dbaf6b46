@@ -1,0 +1,20 @@
+package com.test.microservice.mainweb.rest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.netflix.discovery.converters.Auto;
+
+@RestController
+public class MainWebRest {
+	
+	@Autowired
+	private DepositServiceProxy depositServiceProxy;
+	
+	@GetMapping("/doDeposit/{bathToDeposit}")
+	public String doDeposit(@PathVariable("bathToDeposit") String bathToDeposit, Model model){
+		String result = depositServiceBridge.doDeposit(bathToDeposit);
+		model.addAttribute("json", result);
+        return result;
+	}
+}
